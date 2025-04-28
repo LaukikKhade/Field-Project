@@ -1,0 +1,14 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "user_appointments",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+} 

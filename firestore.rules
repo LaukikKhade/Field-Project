@@ -1,0 +1,77 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return request.auth != null && 
+        request.auth.token.email == '2023.laukik.khade@ves.ac.in';
+    }
+
+    // Allow collection group queries for user_appointments
+    match /{path=**}/user_appointments/{appointmentId} {
+      allow read: if isAuthenticated(); // Allow all authenticated users to read appointments
+      allow write: if isAuthenticated() && (
+        request.auth.uid == path[1] || // User can write their own appointments
+        isAdmin() // Admin can write any appointment
+      );
+    }
+
+    // Allow direct access to appointments collection
+    match /appointments/{userId}/user_appointments/{appointmentId} {
+      allow read: if isAuthenticated() && (
+        request.auth.uid == userId || // User can read their own appointments
+        isAdmin() // Admin can read all appointments
+      );
+      allow write: if isAuthenticated() && (
+        request.auth.uid == userId || // User can write their own appointments
+        isAdmin() // Admin can write any appointment
+      );
+    }
+
+    // Locks collection rules for preventing double bookings
+    match /locks/{lockId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+      allow delete: if isAuthenticated(); // Allow deletion of locks
+    }
+
+    // Time slots collection rules
+    match /timeSlots/{document=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // Allow all users to create and update time slots
+    }
+
+    // Allow users to read and write their own user document
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (
+        request.auth.uid == userId || // User can read their own document
+        isAdmin() // Admin can read all user documents
+      );
+      allow write: if isAuthenticated() && (
+        request.auth.uid == userId || // User can write their own document
+        isAdmin() // Admin can write any user document
+      );
+    }
+
+    // Services collection rules
+    match /services/{document=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // Stylists collection rules
+    match /stylists/{document=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // Allow access to any collection if user is admin
+    match /{document=**} {
+      allow read: if isAdmin();
+    }
+  }
+} 

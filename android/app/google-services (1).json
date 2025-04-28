@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "912928280361",
+    "project_id": "doctor-appointment-7fbdf",
+    "storage_bucket": "doctor-appointment-7fbdf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912928280361:android:cb95f95ec6f753c370b138",
+        "android_client_info": {
+          "package_name": "com.example.field_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs1cB5U0YdQ6F3jsGIWmv0DxOW0IgQho0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912928280361:android:978d1d769947a1c270b138",
+        "android_client_info": {
+          "package_name": "com.example.salon_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs1cB5U0YdQ6F3jsGIWmv0DxOW0IgQho0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912928280361:android:33e74ee6b2964fcf70b138",
+        "android_client_info": {
+          "package_name": "com.example.sohna_salon_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs1cB5U0YdQ6F3jsGIWmv0DxOW0IgQho0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912928280361-0lu95j42d08lq81n3urnrb8q106gfj10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
